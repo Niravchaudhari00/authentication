@@ -1,5 +1,5 @@
 import User from "../models/registerModel.js";
-
+import sendToken from "../utils/jwtToken.js";
 export const registerUser = async (req, res) => {
      try {
           const { name, email, password } = req.body;
@@ -13,12 +13,7 @@ export const registerUser = async (req, res) => {
                }
           })
 
-          const token = user.getJwtToke()
-
-          res.status(201).json({
-               success: true,
-               token
-          })
+          sendToken(user, 201, "User register successfully", res)
 
      } catch (error) {
           res.status(500).json({
@@ -56,7 +51,9 @@ export const loginUser = async (req, res) => {
                })
           }
 
-     } catch (error) {
+          sendToken(user, 201, "Login Success", res)
 
+     } catch (error) {
+          
      }
 }

@@ -1,0 +1,4 @@
+username = nirav16bca
+password = mijhC3Hh5a1u2Mqn
+niravchaudhari
+mongodb+srv://nirav16bca:<password>@cluster0.iopjkb1.mongodb.net/test

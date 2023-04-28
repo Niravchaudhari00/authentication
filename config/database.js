@@ -10,6 +10,7 @@ const DBConnect = () => {
      }).catch((err) => {
           console.log("Mongodb connection faild");
           console.log(err.message);
+          process.exit(1);
      })
 }
 

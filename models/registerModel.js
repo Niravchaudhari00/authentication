@@ -59,7 +59,7 @@ registerSchema.pre("save", async function (next) {
           console.log(error.message);
      }
 })
-// JWT_TOKEN
+// JWT_TOKEN genereate token
 registerSchema.methods.getJwtToke = function () {
      return jwt.sign({ id: this._id }, process.env.JWT_SECRATE_KEY, {
           expiresIn: process.env.JWT_EXPIRE,
